@@ -2,7 +2,7 @@
 
 /**
  * binary_tree_depth - The measures depth (dpt) of node.
- * @tree: pointer to the node of measure. 
+ * @tree: pointer to the node of measure.
  * Return: 0 if NULL.
  */
 
