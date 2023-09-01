@@ -6,15 +6,15 @@
  * Return: 0 if NULL.
  */
 
-size_t binary_tree_s(const binary_tree_t *tree)
+size_t binary_tree_size(const binary_tree_t *tree)
 {
-	size_t l_size, rightsize;
+	size_t im = 1;
 
-	if (tree == NULL)
+	if (!tree)
 		return (0);
 
-	l_size = binary_tree_s(tree->left);
-	r_size = binary_tree_s(tree->right);
+	im += binary_tree_size(tree->left);
+	im += binary_tree_size(tree->right);
 
-	return (l_size + r_size + 1);
+	return (im);
 }
