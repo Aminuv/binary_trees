@@ -7,7 +7,6 @@
  *
  * Return: A pointer, or NULL.
  */
-
 avl_t *array_to_avl(int *array, size_t size)
 {
 	avl_t *tree = NULL;
@@ -16,16 +15,16 @@ avl_t *array_to_avl(int *array, size_t size)
 	if (array == NULL)
 		return (NULL);
 
-	for (j = 0; j < size; j++)
+	for (i = 0; i < size; i++)
 	{
-		for (i = 0; i < i; i++)
+		for (j = 0; j < i; j++)
 		{
-			if (array[i] == array[j])
+			if (array[j] == array[i])
 				break;
 		}
-		if (i == j)
+		if (j == i)
 		{
-			if (avl_insert(&tree, array[j]) == NULL)
+			if (avl_insert(&tree, array[i]) == NULL)
 				return (NULL);
 		}
 	}
