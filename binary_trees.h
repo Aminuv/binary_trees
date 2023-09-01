@@ -73,5 +73,8 @@ heap_t *array_to_heap(int *array, size_t size);
 int heap_extract(heap_t **root);
 int *heap_to_sorted_array(heap_t *heap, size_t *size);
 
+void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
+void print_level_order(const binary_tree_t *tree, int level, void (*func)(int))
+size_t binary_tree_height_aux(const binary_tree_t *tree)
 
 #endif /*BINARY_TREES_H*/

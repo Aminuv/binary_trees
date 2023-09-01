@@ -1,49 +1,73 @@
 #include "binary_trees.h"
 
 /**
- * bst_insert - The inserts of value in a BST.
+ * * binary_tree_height_aux -  the root of that tree.
+ * * @tree: A Pointer to
  *
- * @tree: double pointer to the node
- * @value: value to store in the node.
- *
- * Return: pointer to the cre or, NULL.
+ * Return: the Trees
  */
 
-bst_t *bst_insert(bst_t **tree, int value)
+size_t binary_tree_height_aux(const binary_tree_t *tree)
 {
-	bst_t *_new, *_tr;
+	size_t h_left = 0, h_right = 0;
 
-	if (tree == NULL || *tree == NULL)
+	if (!tree)
+		return (0);
+	if (tree->left)
+		h_left = 1 + binary_tree_height_aux(tree->left);
+	if (tree->right)
+		h_right = 1 + binary_tree_height_aux(tree->right);
+
+	if (h_left > h_right)
+		return (h_left);
+	return (h_right);
+}
+
+/**
+ * print_level_order - print each
+ * @tree: A Pointer to thse
+ * @level: THe level of  tree
+ * @func: A pointer to the  node
+ *
+ * Return: Void
+ */
+
+void print_level_order(const binary_tree_t *tree, int level, void (*func)(int))
+{
+	if (!tree)
+		return;
+
+	if (level == 1)
+		func(tree->n);
+	else if (level > 1)
 	{
-		_new = binary_tree_node(NULL, value);
-		*tree = _new;
-		return (_new);
+		print_level_order(tree->left, level - 1, func);
+		print_level_order(tree->right, level - 1, func);
 	}
+}
 
-	_tr = *tree;
+/**
+ * binary_tree_levelorder - The function that goes through a nods
+ * binary A tree.
+ * @tree: A pointer to  root node.
+ * @func: A pointer to a function.
+ *
+ *Return: Void
+ */
 
-	while (_tr != NULL)
+void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
+{
+	int _height = 0;
+	int _len = 1;
+
+	if (!tree || !func)
+		return;
+
+	_height = binary_tree_height_aux(tree) + 1;
+
+	while (_len <= height)
 	{
-		if (_tr->n == value)
-			return (NULL);
-		if (_tr->n > value)
-		{
-			if (_tr->left == NULL)
-			{
-				_tr->left = binary_tree_node(_tr, value);
-				return _tr->left);
-			}
-			_tr = _tr->left;
-		}
-		if (_tr->n < value)
-		{
-			if (_tr->right == NULL)
-			{
-				_tr->right = binary_tree_node(_tr, value);
-				return (_tr->right);
-			}
-			_tr = _tr->right;
-		}
+		print_level_order(tree, _len, func);
+		len++;
 	}
-	return (NULL);
 }
