@@ -5,14 +5,13 @@
  * @node: pointer to the node to find the sib_ling
  * Return: NULL if node or _parent are NULL or no sib_ling found
  */
-
 binary_tree_t *binary_tree_sibling(binary_tree_t *node)
 {
-	if (node == NULL || node->_parent == NULL)
+	if (node == NULL || node->parent == NULL)
 		return (NULL);
 
-	if (node->_parent->left == node)
-		return (node->_parent->right);
+	if (node->parent->left == node)
+		return (node->parent->right);
 	else
-		return (node->_parent->left);
+		return (node->parent->left);
 }
