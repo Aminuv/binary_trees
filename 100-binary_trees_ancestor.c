@@ -4,7 +4,7 @@
  * binary_trees_ancestor - The finds the lowest common ancestor.
  * @first: pointer to the first node.
  * @second: pointer to the second node.
- * 
+ *
  * Return: pointer to the LCA or, NULL.
  */
 
