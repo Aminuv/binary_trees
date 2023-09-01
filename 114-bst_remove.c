@@ -1,12 +1,12 @@
 #include "binary_trees.h"
 
 /**
- * bst_findMin - the finds the minimum Value
- * @node: A pointer to the node
- * Return: NULL if NULL
+ * BstFindMin - finds the minimum value
+ * @node: pointer to the node
+ * Return: NULL if node is NULL
  */
 
-bst_t *bst_findMin(bst_t *node)
+bst_t *BstFindMin(bst_t *node)
 {
 	if (node == NULL)
 		return (NULL);
@@ -17,10 +17,11 @@ bst_t *bst_findMin(bst_t *node)
 }
 
 /**
- * bst_remove - For removing the node from a 'BST'.
- * @root: A pointer to the 'BST'.
- * @value: A value to remove from the 'BST'.
- * Return: Pointer.
+ * bst_remove - For the removes of a node from the 'BST'.
+ * @root: A pointer to the node of it.
+ * @value: value to remove from it.
+ *
+ * Return: A pointer.
  */
 
 bst_t *bst_remove(bst_t *root, int value)
@@ -49,7 +50,7 @@ bst_t *bst_remove(bst_t *root, int value)
 			return (tmp);
 		}
 
-		tmp = bst_findMin(root->right);
+		tmp = BstFindMin(root->right);
 		root->n = tmp->n;
 
 		root->right = bst_remove(root->right, tmp->n);
