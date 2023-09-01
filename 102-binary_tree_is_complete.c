@@ -37,7 +37,7 @@ int is_complete_recursive(const binary_tree_t *root, size_t index, size_t size)
 /**
  * binary_tree_is_complete - The checks if a binary tree is complete
  * @tree: A pointer to the node.
- * 
+ *
  * Return: 0 if NULL.
  */
 

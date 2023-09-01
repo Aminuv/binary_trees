@@ -4,7 +4,7 @@
  * array_to_bst - The builds a 'BST' from an array.
  * @array: A pointer to the first element.
  * @size: A number of an element.
- * 
+ *
  * Return: pointer or, NULL.
  */
 

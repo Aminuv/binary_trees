@@ -30,7 +30,7 @@ bst_t *bst_insert(bst_t **tree, int value)
 			if (_tr->left == NULL)
 			{
 				_tr->left = binary_tree_node(_tr, value);
-				return _tr->left);
+				return (_tr->left);
 			}
 			_tr = _tr->left;
 		}
