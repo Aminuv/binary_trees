@@ -5,16 +5,15 @@
  * @tree: pointer to the root node.
  * Return: 0 if NULL.
  */
-
 size_t binary_tree_size(const binary_tree_t *tree)
 {
-	size_t l_size, rightsize;
+	size_t leftsize, rightsize;
 
 	if (tree == NULL)
 		return (0);
 
-	l_size = binary_tree_s(tree->left);
-	r_size = binary_tree_s(tree->right);
+	leftsize = binary_tree_size(tree->left);
+	rightsize = binary_tree_size(tree->right);
 
-	return (l_size + r_size + 1);
+	return (leftsize + rightsize + 1);
 }
